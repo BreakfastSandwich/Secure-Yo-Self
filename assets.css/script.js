@@ -4,6 +4,7 @@
 var count = prompt("How Many Characters Would You Like?","Min. 8 - Max 128")
 
 // create if else function to verify user input is between 8 and 128
+// send alert prompt if user value is outside of range
 
 var special = confirm("Include Special Characters?")
 

@@ -15,17 +15,24 @@ howManyNumElement.addEventListener('input', syncHowMany);
 howManySliderElement.addEventListener('input', syncHowMany);
 
 // stopping the "generate Password" button from submitting the form 
-FormData.addEventListener('submit', e=> {
-    e.preventdefault()
+FormData.addEventListener('submit', f=> {
+    f.preventdefault()
+    const charAmount = charAmount.value
+    const includeupper = upperCharsElement.
+    const includeNum = numsElement.
+    const includeSpec = specCharsElement.
+
+    const password = generatePassword(charAmount, includeupper, includeNum, includeSpec)
 })
 
 
 // creating function to sync the slider and numbers on the html side
-function syncHowMany (e) {
-    const value = e.target.value
+function syncHowMany (s) {
+    const value = s.target.value
     howManySliderElement.value = value
     howManyNumElement.value = value
 }
+
 
 
 
