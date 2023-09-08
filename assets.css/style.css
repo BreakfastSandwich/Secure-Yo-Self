@@ -117,12 +117,20 @@ header{
 
 .generator-return{
     min-height: 8rem;
-    background-color: white;
+    background-color: rgb(255, 255, 255);
     border: 1px dashed var(--darkgrey);
     padding: .5rem;
     margin: .5rem;
     border-radius: .25rem;
     font-family: var(--font);
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}
+
+#Password{
+    width: 22rem;
+    height: 8rem;
 }
 
 .generator-footer{
