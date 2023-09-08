@@ -5,9 +5,11 @@
 }
 
 :root{
-    --font: 'Roboto', sans-serif;
+    --font: 'Cinzel', serif;
     --grey: #777;
     --darkgrey: #222222;
+    --glacier: #b8dbf18f;
+    --lightgrey: #d6d6d6;
 
 }
 
@@ -18,17 +20,73 @@ body{
     flex-wrap: wrap;
     align-content: center;
     box-sizing: border-box;
+    background-color: var(--lightgrey);
 }
 
 
 header{
     font-family: var(--font);
     padding: 2rem;
-    margin: 2rem;
+    margin: 3rem;
     color: var(--darkgrey);
+    margin-bottom: 1rem;
+    margin-top: 1rem;
 
 }
 
+/* styling for the user input container */
+
+.user-input{
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    align-content: space-evenly;
+    flex: 1 1 90%;
+    min-height: 10rem;
+    background-color: var(--glacier);
+    border: none;
+    margin: .5rem;
+    border-radius: 1rem;
+    box-shadow: 0 2px 5px 1px var(--grey);
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+   
+}
+
+.user-input div{
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+    border-bottom: 1px solid var(--grey);
+   
+
+}
+
+/* styling the label for the user input section */
+
+.user-input div label{
+    font-family: var(--font);
+    color: var(--darkgrey);
+    font-size: 1.2rem;
+    align-self: center;
+    font-weight: 500;
+}
+
+
+/* styling for the "How many characters" text box */
+#howMany{
+    width: 100px;
+    border-radius: .4em;
+    padding: .5em;
+    font-family: var(--font);
+}
+
+.checkbox{
+    width: 25px;
+    padding: .5em;
+}
+
+/* Styling for the Generator container */
 .generator-box {
     display: flex;
     justify-content: space-evenly;
@@ -36,7 +94,7 @@ header{
     align-content: center;
     flex: 1 1 90%;
     min-height: 20rem;
-    background-color: antiquewhite;
+    background-color: var(--glacier);
     border: none;
     margin: .5rem;
     border-radius: 1rem;
@@ -51,8 +109,11 @@ header{
     font-size: 1.5rem;
     color: var(--darkgrey);
     border-bottom: 1px solid var(--grey);
+    text-align: center;
+    padding: .5rem;
 }
 
+/* styling for the "output" section  */
 
 .generator-return{
     min-height: 8rem;
@@ -61,6 +122,7 @@ header{
     padding: .5rem;
     margin: .5rem;
     border-radius: .25rem;
+    font-family: var(--font);
 }
 
 .generator-footer{
@@ -70,6 +132,7 @@ header{
     border-top: 1px solid var(--grey);
 }
 
+/* Button perameters */
 .generator-footer button{
     width: auto;
     border: none;
@@ -79,7 +142,7 @@ header{
    
 }
 
-
+/* button styling */
 .generator-footer button input{
     background-color: red;
     color: white;
@@ -88,5 +151,7 @@ header{
     margin: 0;
     border-radius: 1.5rem;
     font-size: 1.5em;
+    font-family: var(--font);
+   
 
 }
