@@ -26,11 +26,11 @@ body{
 
 header{
     font-family: var(--font);
-    padding: 2rem;
+    padding: 1rem;
     margin: 3rem;
     color: var(--darkgrey);
     margin-bottom: 1rem;
-    margin-top: 1rem;
+    margin-top: 0;
 
 }
 
@@ -57,7 +57,7 @@ header{
     display: flex;
     justify-content: space-between;
     padding: 1rem;
-    border-bottom: 1px solid var(--grey);
+    /* border-bottom: 1px solid var(--grey); */
    
 
 }
@@ -75,10 +75,45 @@ header{
 
 /* styling for the "How many characters" text box */
 #howMany{
-    width: 100px;
+    width: 4rem;
     border-radius: .4em;
     padding: .5em;
     font-family: var(--font);
+    
+}
+
+/* numberInput and sliderSync were createdso the slider would nest under */
+/* the text and input field allowing for finer control */
+
+/* div for number input wrapper  */
+
+.numbersMain{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    padding: 0;
+    margin: 0;
+    width: auto;
+    border-bottom: 1px solid var(--grey);
+
+}
+
+/* styling for char # field */
+.numberInput{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-content: center;
+    border-top: 1px solid var(--grey);  
+
+}
+
+/* div for slider  */
+
+.slider input{
+    width: 20rem;
+
 }
 
 .checkbox{
@@ -116,16 +151,23 @@ header{
 /* styling for the "output" section  */
 
 .generator-return{
-    min-height: 8rem;
+    min-height: 4rem;
     background-color: rgb(255, 255, 255);
     border: 1px dashed var(--darkgrey);
     padding: .5rem;
     margin: .5rem;
-    border-radius: .25rem;
+    border-radius: .5rem;
     font-family: var(--font);
     display: flex;
     align-content: center;
     justify-content: center;
+    word-break: break-all;
+}
+
+.generator-return h3 {
+    flex-wrap: wrap;
+    align-self: center;
+
 }
 
 #Password{
@@ -147,6 +189,7 @@ header{
     margin: 1rem;
     color: white;
     border-radius: 1.5rem;
+    
    
 }
 
@@ -154,6 +197,7 @@ header{
     background-color: rgba(248, 52, 52, 0.534);
     box-shadow: inset 0px 0px 5px var(--darkgrey), 5px 5px 5px var(--grey);
     color: var(--darkgrey);
+    cursor: pointer;
 }
     
 .generator-footer button input:active {

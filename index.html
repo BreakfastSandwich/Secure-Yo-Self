@@ -5,7 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./assets.css/style.css">
-    <title>Password Generator</title>
+    <!-- below is the script page to use the alert windows -->
+
+    <!-- <script src="./assets.css/script.js" defer></script> -->
+    <!-- below is the script page to use the user input section  -->
+
+    <script src="./assets.css/script2.js" defer></script>
+
+    <title>Secure Yo-Self</title>
 </head>
 
 <body>
@@ -13,10 +20,15 @@
 
         <h1>Password Generator</h1>
     </header>
-    <div class="user-input">
-        <div>
-            <label for="howMany">How Many Characters?</label>
-            <input type="text" name="howMany" id="howMany" placeholder="min 8, max 128" class="reset">
+    <div class="user-input form">
+        <div class="numbersMain">
+            <div class="numberInput numbers">
+            <label for="howManyNum">How Many Characters?</label>
+            <input type="number" name="howMany" id="howManyNum" min="8" max="128" value="12" >
+            </div>
+            <div class="slider numbers">
+            <input type="range" name="howManySlider" id="howManySlider" min="8" max="128" value="12">
+            </div>
         </div>
         <div>
             <label for="specChars">Include Special Characters?</label>
@@ -34,9 +46,10 @@
     <div class="generator-box">
         <div class="generator-header">Generate a Password</div>
         <div class="generator-return">
-            <input type="text" name="Password" id="Password" >
+            <h3>Password Output</h3>
+            <!-- <input type="text" name="Password" id="Password" > -->
         </div>
-        <div class="generator-footer">
+        <div class="generator-footer form">
             <button>
                 <input type="submit" id="submit" value="Generate Password">
             </button>
