@@ -1,30 +1,51 @@
 // // use event listener to update Var's for character count, special characters, etc
 // // use .onclick to start the password generation function and reset the user input values
-// var userInput = document.getElementsByClassName('user-input')
-// userInput.setAttribute("style", "display:none")
+ var userInput = document.getElementsByClassName('user-input')
+userInput.setAttribute('style', 'display:none');
 
+
+var specCharsElement = ('')
+var upperCharsElement = ('')
+var numsElement = ('')
 
 var charAmount = prompt("How Many Characters Would You Like?","Min. 8 - Max 128")
 
-if (charAmount <7){
-    alert("Character amount must be at least 8 characters")
-} 
-if (charAmount > 128){
-    alert("Character Max amount is 128 characters")
-}
+if (charAmount >= 8 || charAmount <= 128) {
 
+    prompts()
+
+} else {
+    alert("Character amount must be between 8 and 128 characters")
+};
+
+
+// document.onload = prompts
+
+ function prompts() {
+
+    specCharsElement = confirm("Include Special Characters?")
+
+    upperCharsElement = confirm("Include Uppercase Characters?")
+    
+    numsElement = confirm("Include Numbers?")
+ }
+
+// var charAmount = prompt("How Many Characters Would You Like?","Min. 8 - Max 128")
+
+// if (charAmount >=8 || charAmount <= 128){
+
+
+// } else {
+//     alert("Character amount must be between 8 and 128 characters")
+// };
 
 
 // create if else function to verify user input is between 8 and 128
 // send alert prompt if user value is outside of range
 
-var specCharsElement = confirm("Include Special Characters?")
-
-var upperCharsElement = confirm("Include Uppercase Characters?")
-
-var numsElement = confirm("Include Numbers?")
 
 
+//  alert("Character amount must be between 8 and 128 characters")
 
 
 
