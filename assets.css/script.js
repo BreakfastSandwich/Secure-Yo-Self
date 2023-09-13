@@ -1,48 +1,48 @@
 
 // // traversing Dom to get the upper form setion so I can disable the display allowing the user to select which wersion they'd like to use
 // // based on the script they uncomment.
-//  var userInput = document.getElementsByClassName('user-input')
-//  console.log(userInput)
-// userInput.setAttribute('style', 'display:none');
+//     var userInput = document.querySelector('user-input');
+// console.log(userInput);
+//     userInput.setAttribute('style', 'display:none');
 
-const password = document.getElementById('passwordPrint')
+    const password = document.getElementById('passwordPrint');
 
 // display prompt asking user for a number of characters
-var charAmount = prompt("How Many Characters Would You Like?","Min. 8 - Max 128")
-console.log (charAmount)
+    var charAmount = prompt("How Many Characters Would You Like?","Min. 8 - Max 128");
+console.log (charAmount);
 
-if (charAmount <=8 || !charAmount >= 128 || charAmount == "Min. 8 - Max 128"){
-    alert("Charater amount must be between 8 and 128 characters")
-} else {
+    if (charAmount <=8 || !charAmount >= 128 || charAmount == "Min. 8 - Max 128"){
+        alert("Charater amount must be between 8 and 128 characters")
+    } else {
 
 // display confirm box asking user if they want Special Characters
-var specCharsElement = confirm("Include Special Characters?")
+    var specCharsElement = confirm("Include Special Characters?")
 
 
 // display confirm box asking user if they want Uppercase Characters
-var    upperCharsElement = confirm("Include Uppercase Characters?")
+    var    upperCharsElement = confirm("Include Uppercase Characters?")
 
 
 // display confirm box asking user if they want Number Characters    
-var    numsElement = confirm("Include Numbers?")
+    var    numsElement = confirm("Include Numbers?")
 
-init()
-};
+    init()
+    };
 
 
 
 //  create array consts to hold Ascii values for all Char types needed. .concat used to join sections
 // of ASCII table to house special chars.  https://www.petefreitag.com/cheatsheets/ascii-codes/ used as template.
-const LOWERCASE = ASCIILowToHigh(97, 122)
-const UPPERCASE = ASCIILowToHigh(65, 90)
-const NUMBERS = ASCIILowToHigh(48, 57)
-const SPECIAL = ASCIILowToHigh(33, 47).concat(
-    ASCIILowToHigh(58, 64)
-).concat(
-    ASCIILowToHigh(91, 96)
-).concat(
-    ASCIILowToHigh(123, 126)
-);
+    const LOWERCASE = ASCIILowToHigh(97, 122);
+    const UPPERCASE = ASCIILowToHigh(65, 90);
+    const NUMBERS = ASCIILowToHigh(48, 57);
+    const SPECIAL = ASCIILowToHigh(33, 47).concat(
+        ASCIILowToHigh(58, 64)
+    ).concat(
+        ASCIILowToHigh(91, 96)
+    ).concat(
+        ASCIILowToHigh(123, 126)
+    );
 
 // create function to allow an ascii chart range array for each char type-set
 
@@ -52,10 +52,10 @@ function ASCIILowToHigh(low, high) {
         array.push(i)
     }
     return array
-};
+    };
 
 // confirming array integrity after ASCII array conversion
-console.log(LOWERCASE)
+console.log(LOWERCASE);
 
 
     
@@ -67,11 +67,10 @@ function init(e) {
     // e.preventdefault()
     const password = generatePassword()
     passwordPrint.textContent = password
-    console.log(password)
-
-    console.log(charAmount)
+console.log(password)
+console.log(charAmount)
     
-};
+    };
 
 
 
@@ -98,11 +97,11 @@ function generatePassword() {
     // if Special Chars have been selected concat those values to the available char array
     if (specCharsElement) {
         charCodes = charCodes.concat(SPECIAL)
-    }
+    };
     
     // checking array integrity
-console.log(charCodes)
-console.log(charAmount)
+console.log(charCodes);
+console.log(charAmount);
 
     // using for loop and math floor/random to generated and fill in the array from the concat'd charCodes list
     const passwordChars = []
@@ -117,7 +116,7 @@ console.log(String.fromCharCode(...charCodes))
 
         // passwordChars.push(char) ****** testing
         
-    }
+    };
 
     // adding to an empty string
     
