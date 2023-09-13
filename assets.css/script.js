@@ -1,51 +1,33 @@
-// // use event listener to update Var's for character count, special characters, etc
-// // use .onclick to start the password generation function and reset the user input values
- var userInput = document.getElementsByClassName('user-input')
-userInput.setAttribute('style', 'display:none');
 
+// // traversing Dom to get the upper form setion so I can disable the display allowing the user to select which wersion they'd like to use
+// // based on the script they uncomment.
+//  var userInput = document.getElementsByClassName('user-input')
+//  console.log(userInput)
+// userInput.setAttribute('style', 'display:none');
 
-var specCharsElement = ('')
-var upperCharsElement = ('')
-var numsElement = ('')
+const password = document.getElementById('passwordPrint')
 
+// display prompt asking user for a number of characters
 var charAmount = prompt("How Many Characters Would You Like?","Min. 8 - Max 128")
+console.log (charAmount)
 
-if (charAmount >= 8 || charAmount <= 128) {
-
-    prompts()
-
+if (charAmount <=8 || !charAmount >= 128 || charAmount == "Min. 8 - Max 128"){
+    alert("Charater amount must be between 8 and 128 characters")
 } else {
-    alert("Character amount must be between 8 and 128 characters")
+
+// display confirm box asking user if they want Special Characters
+var specCharsElement = confirm("Include Special Characters?")
+
+
+// display confirm box asking user if they want Uppercase Characters
+var    upperCharsElement = confirm("Include Uppercase Characters?")
+
+
+// display confirm box asking user if they want Number Characters    
+var    numsElement = confirm("Include Numbers?")
+
+init()
 };
-
-
-// document.onload = prompts
-
- function prompts() {
-
-    specCharsElement = confirm("Include Special Characters?")
-
-    upperCharsElement = confirm("Include Uppercase Characters?")
-    
-    numsElement = confirm("Include Numbers?")
- }
-
-// var charAmount = prompt("How Many Characters Would You Like?","Min. 8 - Max 128")
-
-// if (charAmount >=8 || charAmount <= 128){
-
-
-// } else {
-//     alert("Character amount must be between 8 and 128 characters")
-// };
-
-
-// create if else function to verify user input is between 8 and 128
-// send alert prompt if user value is outside of range
-
-
-
-//  alert("Character amount must be between 8 and 128 characters")
 
 
 
@@ -93,9 +75,9 @@ function init(e) {
 
 
 
-const password = document.getElementById('passwordPrint')
 
 
+// let charCodes = LOWERCASE
 
 // function creats the password array
 function generatePassword() {
@@ -131,7 +113,7 @@ console.log(String.fromCharCode(...charCodes))
           console.log(char)
 
         // adding the random char to the array, using the String.fromCharCode to convert the ASCII code back to lettering
-        passwordChars.push(String.fromCharCode( char))  
+        passwordChars.push(String.fromCharCode(char))  
 
         // passwordChars.push(char) ****** testing
         
@@ -145,10 +127,10 @@ console.log(String.fromCharCode(...charCodes))
 
 // console.log(String.fromCharCode(...charCodes))
 
-if (!numsElement || numsElement) {
-    init()
+// if (!numsElement || numsElement) {
+//     init()
     
-}
+// }
 // triggering the series of functions with the click of the generate password button
 // generate.addEventListener('click', init)
 

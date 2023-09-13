@@ -62,7 +62,7 @@ function ASCIILowToHigh(low, high) {
 
 // confirming array integrity after ASCII array conversion
 console.log(LOWERCASE)
-console.log(String.fromCharCode(...charCodes))
+// console.log(String.fromCharCode(...charCodes))
 
     
 
@@ -70,7 +70,7 @@ console.log(String.fromCharCode(...charCodes))
 // init function triggers the password generation and sets password display
 
 function init(e) {
-    e.preventdefault()
+    // e.preventdefault()
     const password = generatePassword()
     passwordPrint.textContent = password
     console.log(password)
