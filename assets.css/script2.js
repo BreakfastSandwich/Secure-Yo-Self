@@ -5,28 +5,36 @@ const howManySliderElement = document.getElementById('howManySlider');
 const howManyNumElement = document.getElementById('howManyNum');
 // pulling the value of checkbox on the html page
 const specCharsElement = document.getElementById('specChars');
+// const specChars = specCharsElement
 const upperCharsElement = document.getElementById('upperChars');
+// const upperChars = upperCharsElement.value
 const numsElement = document.getElementById('nums');
+// const nums = numsElement.value
 // targeting the submit button
-const generate = document.querySelector("#btn");
+const generate = document.getElementById("submit");
 // targeting the "Password Output" text in the html
-const passwordPrint = document.getElementById('passwordPrint')
+const passwordPrint = document.getElementById('passwordPrint');
 
 
 
-console.log(generate)
+console.log(specCharsElement.value);
 
-// let passwordElement = document.querySelector('password');**************
+
 
 // creating event listeners for both the slider and numbers input
 howManyNumElement.addEventListener('input', syncHowMany);
 howManySliderElement.addEventListener('input', syncHowMany);
+
+
+// setting charamount value to sync with user input
+let charAmount = 8
 
 // creating function to sync the slider and numbers on the html side
 function syncHowMany(s) {
     const value = s.target.value
     howManySliderElement.value = value
     howManyNumElement.value = value
+    charAmount = value
 };
 
 //  create array consts to hold Ascii values for all Char types needed. .concat used to join sections
@@ -42,23 +50,6 @@ const SPECIAL = ASCIILowToHigh(33, 47).concat(
     ASCIILowToHigh(123, 126)
 );
 
-
-// stopping the "generate Password" button from submitting the form and refreshing page 
-generate.addEventListener('submit', e => {
-    // e.preventdefault()
-    // specifying which values ro include in future password array
-    const charAmount = howManyNumElement.value
-    const includeupper = upperCharsElement.checked
-    const includeNum = numsElement.checked
-    const includeSpec = specCharsElement.checked
-    const password = generatePassword(charAmount, includeupper, includeNum, includeSpec)
-    passwordPrint.textContent = password
-    console.log(password)
-    console.log(charAmount)
-    console.log(includeupper)
-});
-
-
 // create function to allow an ascii chart range array for each char type-set
 
 function ASCIILowToHigh(low, high) {
@@ -67,52 +58,79 @@ function ASCIILowToHigh(low, high) {
         array.push(i)
     }
     return array
-}
+};
 
+// confirming array integrity after ASCII array conversion
+console.log(LOWERCASE)
+console.log(String.fromCharCode(...charCodes))
 
+    
 
+// stopping the "generate Password" button from submitting the form and refreshing page 
+// init function triggers the password generation and sets password display
 
-// creating the password array
-function generatePassword(charAmount, includeupper, includeNum, includeSpec) {
+function init(e) {
+    e.preventdefault()
+    const password = generatePassword()
+    passwordPrint.textContent = password
+    console.log(password)
 
-    // create variable to use as the array. stating with lower case chars as a default
-    let charCodes = LOWERCASE
-
-    // if Uppercase has been selected concat those values to the array
-    if (includeupper) {
-        charCodes = charCodes.concat(UPPERCASE)
-    }
-
-    // if Numbers have been selected concat those values to the array
-    if (includeNum) {
-        charCodes = charCodes.concat(NUMBERS)
-    }
-
-    // if Special Chars have been selected concat those values to the array
-    if (includeSpec) {
-        charCodes = charCodes.concat(SPECIAL)
-    }
-
-    // using for loop and math floor/random to generated and fill in the array from the concat'd charCodes list
-    const passwordChars = []
-    for (let i = 0; i < charAmount; i++) {
-        const char = [Math.floor(Math.random() * charAmount)]
-
-        // adding the random char to the array
-        passwordChars.push(string.fromCharCode(char))
-    }
-    // adding to an empty string
-    console.log(passwordChars)
-    return passwordChars.join('')
-
+    console.log(charAmount)
+    
 };
 
 
 
-// create algo for the array length creation
-    // create randomizer to fill in the new array
 
 
-// create function to convert the Ascii values to Chars
-// create print function to log the new password to the html file
+
+
+// function creats the password array
+function generatePassword() {
+
+    // create variable to use as the array. starting with lower case chars as a default
+    let charCodes = LOWERCASE
+
+    // if Uppercase has been selected concat those values to the available char array
+    if (upperCharsElement.checked) {
+        charCodes = charCodes.concat(UPPERCASE)
+    }
+
+    // if Numbers have been selected concat those values to the available char array
+    if (numsElement.checked) {
+        charCodes = charCodes.concat(NUMBERS)
+    }
+
+    // if Special Chars have been selected concat those values to the available char array
+    if (specCharsElement.checked) {
+        charCodes = charCodes.concat(SPECIAL)
+    }
+    
+    // checking array integrity
+// console.log(charCodes)
+// console.log(charAmount)
+
+    // using for loop and math floor/random to generated and fill in the array from the concat'd charCodes list
+    const passwordChars = []
+    for (let i = 0; i < charAmount; i++) {
+console.log(String.fromCharCode(...charCodes))
+        
+        const char = charCodes[Math.floor(Math.random() * charCodes.length)]   
+          console.log(char)
+
+        // adding the random char to the array, using the String.fromCharCode to convert the ASCII code back to lettering
+        passwordChars.push(String.fromCharCode( char))  
+
+        // passwordChars.push(char) ****** testing
+        
+    }
+
+    // adding to an empty string
+    
+    return passwordChars.join('')
+
+};
+
+// triggering the series of functions with the click of the generate password button
+generate.addEventListener('click', init)
 

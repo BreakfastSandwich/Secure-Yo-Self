@@ -5,12 +5,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./assets.css/style.css">
-    <!-- below is the script page to use the alert windows -->
 
-    <!-- <script src="./assets.css/script.js" defer></script> -->
-    <!-- below is the script page to use the user input section  -->
+    <!-- uncomment the Script tag below to use the promt, confirm, alert windows to generate the password -->
+        <!-- comment out the line below to use the user interface -->
+    <script src="./assets.css/script.js" defer></script>
 
-    <script src="./assets.css/script2.js" defer></script>
+
+    <!-- uncomment the Script tag below to use the user interface to generate the password -->
+        <!-- comment out the line below to use the prompt windows interface -->
+    <!-- <script src="./assets.css/script2.js" defer></script> -->
 
     <title>Secure Yo-Self</title>
 </head>
@@ -23,16 +26,16 @@
     <div class="user-input form">
         <div class="numbersMain">
             <div class="numberInput numbers">
-            <label for="howManyNum">How Many Characters?</label>
-            <input type="number" name="howMany" id="howManyNum" min="8" max="128" value="12" >
+                <label for="howManyNum">How Many Characters?</label>
+                <input type="number" name="howMany" id="howManyNum" min="8" max="128" value="8">
             </div>
             <div class="slider numbers">
-            <input type="range" name="howManySlider" id="howManySlider" min="8" max="128" value="12">
+                <input type="range" name="howManySlider" id="howManySlider" min="8" max="128" value="8">
             </div>
         </div>
         <div>
             <label for="specChars">Include Special Characters?</label>
-            <input type="checkbox" name="specChars" id="specChars" class="checkbox reset">
+            <input type="checkbox" name="specChars" id="specChars" class="checkbox reset" value="">
         </div>
         <div>
             <label for="upperChars">Include Uppercase Characters?</label>
@@ -50,11 +53,9 @@
             <!-- <input type="text" name="Password" id="Password" > -->
         </div>
         <div class="generator-footer form" id="form">
-            <button>
+            <!-- <button> -->
                 <input type="submit" id="submit" value="Generate Password">
-            </button>
-            <button><input type="submit" id="btn"></button>
-
+            <!-- </button> -->
         </div>
     </div>
 

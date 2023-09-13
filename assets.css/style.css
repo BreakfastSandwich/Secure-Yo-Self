@@ -168,10 +168,12 @@ header{
     word-break: break-all;
 }
 
+.generator-return 
+
 .generator-return h3 {
     flex-wrap: wrap;
     align-self: center;
-
+    word-break: break-all;
 }
 
 #Password{
@@ -190,21 +192,21 @@ header{
 .generator-footer button{
     width: auto;
     border: none;
-    margin: 1rem;
+    margin: 2rem;
     color: white;
     border-radius: 1.5rem;
     
    
 }
 
-.generator-footer button input:hover {
+.generator-footer input:hover {
     background-color: rgba(248, 52, 52, 0.534);
     box-shadow: inset 0px 0px 5px var(--darkgrey), 5px 5px 5px var(--grey);
     color: var(--darkgrey);
     cursor: pointer;
 }
     
-.generator-footer button input:active {
+.generator-footer input:active {
     background-color: rgba(248, 52, 52, 0.692);
     box-shadow: inset -2px 0px 3px var(--darkgrey), 5px 0px 5px var(--grey);
     color: var(--darkgrey);
@@ -212,13 +214,17 @@ header{
 
 
 /* button styling */
-.generator-footer button input{
+.generator-footer input{
     background-color: red;
     color: white;
     width: 100%;
     padding: .75em;
-    margin: 0;
+    margin: 1rem;
     border-radius: 1.5rem;
     font-size: 1.5em;
     font-family: var(--font);
+}
+
+.hide{
+    display: none;
 }
