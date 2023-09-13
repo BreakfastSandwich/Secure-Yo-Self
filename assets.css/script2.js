@@ -1,4 +1,6 @@
-
+var userInput = document.getElementById('switch');
+console.log(userInput);
+    userInput.setAttribute('style', 'display:flex');
 // pulling the value of the slider from the html page
     const howManySliderElement = document.getElementById('howManySlider');
 // pulling the value of the num field from the html page

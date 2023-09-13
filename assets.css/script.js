@@ -1,9 +1,39 @@
 
 // // traversing Dom to get the upper form setion so I can disable the display allowing the user to select which wersion they'd like to use
 // // based on the script they uncomment.
-//     var userInput = document.querySelector('user-input');
-// console.log(userInput);
-//     userInput.setAttribute('style', 'display:none');
+    var userInput = document.getElementById('switch');
+console.log(userInput);
+    userInput.setAttribute('style', 'display:none');
+
+
+//  create array consts to hold Ascii values for all Char types needed. .concat used to join sections
+// of ASCII table to house special chars.  https://www.petefreitag.com/cheatsheets/ascii-codes/ used as template.
+const LOWERCASE = ASCIILowToHigh(97, 122);
+const UPPERCASE = ASCIILowToHigh(65, 90);
+const NUMBERS = ASCIILowToHigh(48, 57);
+const SPECIAL = ASCIILowToHigh(33, 47).concat(
+    ASCIILowToHigh(58, 64)
+).concat(
+    ASCIILowToHigh(91, 96)
+).concat(
+    ASCIILowToHigh(123, 126)
+);
+
+// create function to allow an ascii chart range array for each char type-set
+
+function ASCIILowToHigh(low, high) {
+const array = []
+for (let i = low; i <= high; i++) {
+    array.push(i)
+}
+return array
+};
+
+// confirming array integrity after ASCII array conversion
+console.log(LOWERCASE);
+
+
+
 
     const password = document.getElementById('passwordPrint');
 
@@ -31,28 +61,6 @@ console.log (charAmount);
 
 
 
-//  create array consts to hold Ascii values for all Char types needed. .concat used to join sections
-// of ASCII table to house special chars.  https://www.petefreitag.com/cheatsheets/ascii-codes/ used as template.
-    const LOWERCASE = ASCIILowToHigh(97, 122);
-    const UPPERCASE = ASCIILowToHigh(65, 90);
-    const NUMBERS = ASCIILowToHigh(48, 57);
-    const SPECIAL = ASCIILowToHigh(33, 47).concat(
-        ASCIILowToHigh(58, 64)
-    ).concat(
-        ASCIILowToHigh(91, 96)
-    ).concat(
-        ASCIILowToHigh(123, 126)
-    );
-
-// create function to allow an ascii chart range array for each char type-set
-
-function ASCIILowToHigh(low, high) {
-    const array = []
-    for (let i = low; i <= high; i++) {
-        array.push(i)
-    }
-    return array
-    };
 
 // confirming array integrity after ASCII array conversion
 console.log(LOWERCASE);
